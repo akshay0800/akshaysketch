@@ -1,0 +1,53 @@
+{% load static %}
+{% static "images" as baseUrl %}
+
+<html lang="en">
+<head>
+    <title>Akshay Sketch</title>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    
+</head>
+<body>
+
+	<div class="hero-image">
+		<div class="hero-text">
+		  <h1 style="font-size:50px">AkshaySketch</h1>
+		</div>
+	</div>
+
+	  
+	<div class="topnav">
+		
+		{% if user.is_authenticated %}
+                                    
+		<a href="accounts/logout">logout</a>
+		 
+		{% else %}
+		   <a href="accounts/register">Register</a>
+		   <a href="accounts/login">login</a>
+	  {% endif %}
+	
+		<a href="accounts/contact">Contact</a>
+	</div>
+
+
+	<div class="cover">
+		{% for dest in dests %}					
+		<div class="container">
+			<a href="{{dest.img.url}}"><img src="{{dest.img.url}}"  /></a>
+		  
+		  <p>{{dest.name}}</p>
+		  <p>{{dest.desc}}</p>
+		  
+		</div>
+	  {% endfor %}
+	</div>
+
+
+	
+
+<div class="end">
+	<h1>Thank you</h1>
+</div>
+</body>
+</html>

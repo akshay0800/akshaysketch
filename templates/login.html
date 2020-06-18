@@ -1,0 +1,47 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>login</title>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+</head>
+<body>
+    <div class="hero-image">
+		<div class="hero-text">
+		  <h1 style="font-size:50px">AkshaySketch</h1>
+		</div>
+	  </div>
+
+    
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="contact">Contact</a>
+    </div>
+
+
+
+
+    <div class = "signup">
+        <form action="login" method="post">
+            {%csrf_token%}
+            <label for="uname">User Name</label>
+            <input type="text" name="username" placeholder="username"><br>
+            <label for="pass1">password</label>
+            <input type="password" name="password" placeholder="password"><br>
+            <input type="submit">
+    
+        </form>
+    </div>
+    
+    <div>
+        {% for message in messages %}
+        <h3> {{message}}</h3>
+        {% endfor %}
+    </div>
+    <div class="end">
+        <h1>Thank you</h1>
+    </div>
+</body>
+</html>

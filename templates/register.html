@@ -1,0 +1,66 @@
+{% load static %}
+{% static "images" as baseUrl %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Registeration</title>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+</head>
+<body>
+    <div class="hero-image">
+		<div class="hero-text">
+		  <h1 style="font-size:50px">AkshaySketch</h1>
+		</div>
+	  </div>
+
+
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="contact">Contact</a>
+
+	
+	
+	</div>
+
+
+
+
+    <div class ="signup">
+		
+        <h1>Sign-Up</h1>
+    
+        <form action="register" method="post">
+            {% csrf_token %}
+           
+            <label for="fname">First Name</label>
+            <input type="text" name="first_name" placeholder="First Name"><br>
+            <label for="lname">Last Name</label>
+            <input type="text" name="last_name" placeholder="Last Name"><br>
+            <label for="uname">User Name</label>
+            <input type="text" name="username" placeholder="username"><br><br>
+
+            <label for="email">Email Id</label>
+            <input type="email" name="email" placeholder="email"><br><br>
+
+            <label for="pass1">password</label>
+            <input type="password" name="password1" placeholder="password"><br><br>
+
+            <label for="pass2">confirm password</label>
+            <input type="password" name="password2" placeholder="Confirm password"><br>
+            <input type="Submit">
+          </form>
+    </div>   
+
+    <div>
+        {% for message in messages %}
+        <h3> {{message}}</h3>
+        {% endfor %}
+    </div>
+
+    <div class="end">
+        <h1>Thank you</h1>
+    </div>
+</body>
+</html>

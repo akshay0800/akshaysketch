@@ -1,0 +1,42 @@
+{% load static %}
+{% static "images" as baseUrl %}
+
+<html lang="en">
+<head>
+    <title>Contact</title>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+        <!-- Header -->
+        <div class="hero-image">
+            <div class="hero-text">
+              <h1 style="font-size:50px">AkshaySketch</h1>
+            </div>
+          </div>
+    
+        <div class="topnav">
+            <a href="/">Home</a>
+
+
+            {% if user.is_authenticated %}
+                                    
+               <a href="logout">logout</a>
+             
+            {% else %}
+               <a href="register">Register</a>
+               <a href="login">login</a>
+
+            {% endif %}
+          
+        </div>
+    	<!-- login -->
+	<div class ="footer">
+		
+        <h1>Contact</h1>
+        <h5>Akshay Sharma</h5>
+        <a href="https://www.instagram.com/akshay_sharma_0800/?hl=en" class="fa fa-instagram"></a>
+
+    </div>
+</body>
+</html>
